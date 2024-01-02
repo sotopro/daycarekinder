@@ -5,5 +5,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingBottom: 10,
+    paddingHorizontal: 10,
   },
 });

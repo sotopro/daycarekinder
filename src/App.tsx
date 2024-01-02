@@ -6,16 +6,14 @@
  */
 
 import React from 'react';
-import {SafeAreaView, View} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {styles} from './styles';
-import {Home} from './screens';
+import RootNavigation from './navigation';
 
 function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <Home />
-      </View>
+      <RootNavigation />
     </SafeAreaView>
   );
 }

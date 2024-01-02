@@ -7,18 +7,23 @@ import {SliderItemType, SliderItems} from './types';
 
 type SliderProps = {
   items: SliderItems;
-  onPress: (item: SliderItemType) => void;
+  onPressItem: (item: SliderItemType) => void;
+  onPressHeader: () => void;
 };
 
-export const Slider = ({items, onPress}: SliderProps): JSX.Element => {
+export const Slider = ({
+  items,
+  onPressItem,
+  onPressHeader,
+}: SliderProps): JSX.Element => {
   const keyExtractor = (item: SliderItemType) => item.id;
   const renderItem = ({item}: {item: SliderItemType}) => (
-    <SliderItem item={item} onPress={onPress} />
+    <SliderItem item={item} onPress={onPressItem} />
   );
 
   return (
     <>
-      <Header />
+      <Header onPress={onPressHeader} />
       <FlatList
         data={items}
         keyExtractor={keyExtractor}
